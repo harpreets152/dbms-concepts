@@ -1,0 +1,25 @@
+What is Table Normalization in DBMS?
+Normalization is a process of organizing the data in database to avoid data redundancy, insertion anomaly, update anomaly & deletion anomaly. Let’s discuss about anomalies first then we will discuss normal forms with examples.
+
+Anomalies in DBMS
+There are three types of anomalies that occur when the database is not normalized. These are – Insertion, update and deletion anomaly. Let’s take an example to understand this.
+
+Example: Suppose a textile company stores the employee details in a table named employee that has four attributes: emp_id for storing employee’s id, emp_name for storing employee’s name, emp_address for storing employee’s address and emp_dept for storing the department details in which the employee works. At some point of time the table looks like this:
+
+emp_id	emp_name	emp_address	emp_dept
+101	Krishna	Delhi	D001
+101	Krishna	Delhi	D002
+123	Asha	Agra	D890
+166	Nisha	Chennai	D900
+166	Nisha	Chennai	D004
+
+The above table is not normalized. We will see the problems that we face when a table is not normalized.
+Update anomaly: In the above table we have two rows for employee Krisha as he belongs to two departments of the company. If we want to update the address of Krisha then we have to update the same in two rows or the data will become inconsistent. If somehow, the correct address gets updated in one department but not in other then as per the database, Krishna would be having two different addresses, which is not correct and would lead to inconsistent data.
+
+Insert anomaly: Suppose a new employee joins the company, who is under training and currently not assigned to any department then we would not be able to insert the data into the table if emp_dept field doesn’t allow nulls.
+
+Delete anomaly: Suppose, if at a point of time the company closes the department D890 then deleting the rows that are having emp_dept as D890 would also delete the information of employee Maggie since she is assigned only to this department.
+
+To overcome these anomalies we need to normalize the data
+
+Aiming for your Dream 
